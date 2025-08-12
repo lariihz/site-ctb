@@ -6,19 +6,19 @@
     <title>Leisla Beatriz | Contabilidade Estratégica e Consultoria</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Estilos Base */
         :root {
-            --primary-color: #0d1a26;
-            --secondary-color: #1e3a52;
-            --accent-color: #4a90e2;
-            --text-color: #333;
-            --light-bg: #f5f7f9;
+            --primary-color: #4a4a4a;
+            --secondary-color: #6b6b6b;
+            --accent-color: #d1b8a5;
+            --text-color: #4a4a4a;
+            --light-bg: #f9f7f4;
             --white: #fff;
-            --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.08);
-            --shadow-dark: 0 10px 30px rgba(0, 0, 0, 0.15);
+            --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.05);
+            --shadow-dark: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
         * {
             box-sizing: border-box;
@@ -88,6 +88,10 @@
             font-size: 1.8rem;
             font-weight: 700;
             color: var(--primary-color);
+            height: 50px;
+        }
+        .logo img {
+            height: 100%;
         }
         .nav-links {
             list-style: none;
@@ -98,6 +102,7 @@
             font-weight: 600;
             position: relative;
             font-family: 'Montserrat', sans-serif;
+            color: var(--primary-color);
         }
         .nav-links a::after {
             content: '';
@@ -115,7 +120,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(13, 26, 38, 0.7), rgba(13, 26, 38, 0.7)), url('https://images.unsplash.com/photo-1579621970795-87facc2f976d?q=80&w=2940&auto=format&fit=crop');
+            background: linear-gradient(rgba(74, 74, 74, 0.6), rgba(74, 74, 74, 0.6)), url('https://images.unsplash.com/photo-1579621970795-87facc2f976d?q=80&w=2940&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
             color: var(--white);
@@ -151,13 +156,13 @@
         }
         .hero-content p {
             font-size: 1.5rem;
-            font-weight: 400;
+            font-weight: 300;
             max-width: 700px;
             margin: 0 auto 30px;
             font-family: 'Montserrat', sans-serif;
         }
         .cta-button {
-            background: linear-gradient(45deg, var(--accent-color), #0056b3);
+            background: var(--accent-color);
             color: var(--white);
             padding: 15px 40px;
             border-radius: 50px;
@@ -202,40 +207,44 @@
             margin-bottom: 20px;
             font-family: 'Montserrat', sans-serif;
             font-weight: 400;
-            text-align: left;
+            color: var(--secondary-color);
         }
 
         .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 0; /* Remove o padding padrão do grid */
+            margin: 0 auto;
         }
         .service-card {
             background-color: var(--white);
-            padding: 40px;
+            padding: 30px;
             border-radius: 12px;
             text-align: center;
             transition: transform 0.3s, box-shadow 0.3s;
             border-top: 5px solid var(--accent-color);
+            width: 300px; /* Largura fixa para os cards */
         }
         .service-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
         }
         .service-card .icon {
-            font-size: 3rem;
-            background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 20px;
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
         }
         .service-card h3 {
-            font-size: 1.5rem;
-            margin: 0 0 15px;
+            font-size: 1.4rem;
+            margin: 0 0 10px;
             font-family: 'Playfair Display', serif;
         }
         .service-card p {
-            text-align: center;
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-weight: 300;
         }
 
         /* Diferenciais Section */
@@ -266,12 +275,13 @@
             font-family: 'Playfair Display', serif;
         }
         .diferencial-item p {
-            text-align: center;
+            font-weight: 300;
+            color: var(--secondary-color);
         }
 
         /* Testimonial Section */
         .testimonial-section {
-            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            background-color: var(--primary-color);
             color: var(--white);
             padding: 100px 0;
             text-align: center;
@@ -288,19 +298,19 @@
             position: relative;
         }
         .testimonial-section blockquote::before {
-                content: "“";
-                font-size: 6rem;
-                color: rgba(255, 255, 255, 0.2);
-                position: absolute;
-                left: 50%;
-                top: -20px;
-                transform: translateX(-50%);
-            }
+            content: "“";
+            font-size: 6rem;
+            color: rgba(255, 255, 255, 0.2);
+            position: absolute;
+            left: 50%;
+            top: -20px;
+            transform: translateX(-50%);
+        }
         .testimonial-section cite {
             display: block;
             font-style: normal;
             font-weight: 600;
-            color: #aebfd1;
+            color: #d1b8a5;
             font-family: 'Montserrat', sans-serif;
         }
 
@@ -316,11 +326,12 @@
             font-size: 1.1rem;
             max-width: 600px;
             margin: 0 auto 30px;
-            color: #555;
+            color: var(--secondary-color);
+            font-weight: 300;
         }
         .contact-buttons a {
             display: inline-block;
-            background: linear-gradient(45deg, #25d366, #128c7e);
+            background: linear-gradient(45deg, #d1b8a5, #b8a394);
             color: var(--white);
             padding: 15px 40px;
             font-size: 1.2rem;
@@ -333,11 +344,19 @@
             transform: translateY(-5px);
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
         }
+        .whatsapp-button {
+            background-color: #25d366;
+            background: linear-gradient(45deg, #25d366, #128c7e);
+            color: var(--white);
+        }
+        .whatsapp-button:hover {
+            background-color: #128c7e;
+        }
 
         /* Footer */
         .footer {
             background-color: var(--primary-color);
-            color: #aebfd1;
+            color: var(--white);
             padding: 50px 0;
             text-align: center;
         }
@@ -365,12 +384,13 @@
             list-style: none;
         }
         .footer-section a {
-            color: #aebfd1;
+            color: #d1b8a5;
             display: block;
             margin-bottom: 8px;
+            font-weight: 300;
         }
         .footer-bottom {
-            border-top: 1px solid #3a4a58;
+            border-top: 1px solid #6b6b6b;
             padding-top: 20px;
             text-align: center;
             font-size: 0.9rem;
@@ -405,6 +425,9 @@
             .nav-links a {
                 margin: 5px 10px;
             }
+            .logo {
+                height: 40px;
+            }
             h1 { font-size: 2.5rem; }
             h2 { font-size: 2.2rem; }
             .hero-content p { font-size: 1.2rem; }
@@ -412,9 +435,7 @@
             .services-grid, .diferenciais-grid, .footer-content {
                 grid-template-columns: 1fr;
             }
-            .about-content p { text-align: center; }
-            .service-card p { text-align: left; }
-            .diferencial-item p { text-align: left; }
+            .about-content p, .service-card p, .diferencial-item p { text-align: left; }
         }
         @media (max-width: 576px) {
             h1 { font-size: 2rem; }
@@ -423,9 +444,9 @@
             .cta-button { padding: 12px 30px; font-size: 1rem; }
             .footer-content { flex-direction: column; text-align: center; }
             .footer-section { margin-bottom: 20px; }
-            .about-content p { text-align: center; }
-            .service-card p { text-align: left; }
-            .diferencial-item p { text-align: left; }
+            .about-content p, .service-card p, .diferencial-item p { text-align: left; }
+            .services-grid { justify-content: center; }
+            .service-card { width: 100%; max-width: 300px; }
         }
     </style>
 </head>
@@ -433,7 +454,9 @@
 
     <header class="header">
         <nav class="navbar container">
-            <a href="#" class="logo">Leisla Beatriz</a>
+            <a href="#" class="logo">
+                <img src="l(1).png" alt="Leisla Beatriz - Logo">
+            </a>
             <ul class="nav-links">
                 <li><a href="#sobre">Sobre Mim</a></li>
                 <li><a href="#servicos">Serviços</a></li>
@@ -534,7 +557,7 @@
             <h2>Pronto para crescer?</h2>
             <p class="contact-text">Vamos conversar e encontrar a solução perfeita para o seu negócio.</p>
             <div class="contact-buttons">
-                <a href="https://wa.me/553185332906?text=Olá,%20Leisla!%20Gostaria%20de%20saber%20mais%20sobre%20seus%20serviços%20de%20contabilidade." target="_blank" class="whatsapp cta-button">
+                <a href="https://wa.me/553185332906?text=Olá,%20Leisla!%20Gostaria%20de%20saber%20mais%20sobre%20seus%20serviços%20de%20contabilidade." target="_blank" class="whatsapp-button cta-button">
                     <i class="fab fa-whatsapp"></i> Converse no WhatsApp
                 </a>
             </div>
@@ -557,9 +580,8 @@
             </div>
             <div class="footer-section">
                 <h3>Contato</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Rua Exemplo, 123 - Cidade</p>
-                <p><i class="fas fa-envelope"></i> contato@leislabeatriz.com.br</p>
-                <p><i class="fas fa-phone-alt"></i> (31) 98533-2906</p>
+                <p><i class="fas fa-envelope"></i> leisla2020@gmail.com</p>
+                <p><i class="fas fa-phone-alt"></i> (31) 8533-2906</p>
             </div>
         </div>
         <div class="footer-bottom">
