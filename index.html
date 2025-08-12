@@ -202,6 +202,7 @@
             margin-bottom: 20px;
             font-family: 'Montserrat', sans-serif;
             font-weight: 400;
+            text-align: left;
         }
 
         .services-grid {
@@ -233,6 +234,9 @@
             margin: 0 0 15px;
             font-family: 'Playfair Display', serif;
         }
+        .service-card p {
+            text-align: center;
+        }
 
         /* Diferenciais Section */
         .diferenciais-grid {
@@ -261,6 +265,9 @@
             margin-bottom: 10px;
             font-family: 'Playfair Display', serif;
         }
+        .diferencial-item p {
+            text-align: center;
+        }
 
         /* Testimonial Section */
         .testimonial-section {
@@ -281,14 +288,14 @@
             position: relative;
         }
         .testimonial-section blockquote::before {
-            content: "“";
-            font-size: 6rem;
-            color: rgba(255, 255, 255, 0.2);
-            position: absolute;
-            left: 50%;
-            top: -20px;
-            transform: translateX(-50%);
-        }
+                content: "“";
+                font-size: 6rem;
+                color: rgba(255, 255, 255, 0.2);
+                position: absolute;
+                left: 50%;
+                top: -20px;
+                transform: translateX(-50%);
+            }
         .testimonial-section cite {
             display: block;
             font-style: normal;
@@ -398,36 +405,27 @@
             .nav-links a {
                 margin: 5px 10px;
             }
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-            .hero-content p {
-                font-size: 1.2rem;
-            }
-            .about-grid {
-                flex-direction: column;
-            }
-            .about-image {
-                max-width: 250px;
-            }
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2.2rem; }
+            .hero-content p { font-size: 1.2rem; }
+            .about-image { max-width: 250px; }
             .services-grid, .diferenciais-grid, .footer-content {
                 grid-template-columns: 1fr;
             }
+            .about-content p { text-align: center; }
+            .service-card p { text-align: left; }
+            .diferencial-item p { text-align: left; }
         }
         @media (max-width: 576px) {
-            h1 {
-                font-size: 2rem;
-            }
-            h2 {
-                font-size: 2rem;
-            }
-            .hero-content p {
-                font-size: 1rem;
-            }
-            .cta-button {
-                padding: 12px 30px;
-                font-size: 1rem;
-            }
+            h1 { font-size: 2rem; }
+            h2 { font-size: 2rem; }
+            .hero-content p { font-size: 1rem; }
+            .cta-button { padding: 12px 30px; font-size: 1rem; }
+            .footer-content { flex-direction: column; text-align: center; }
+            .footer-section { margin-bottom: 20px; }
+            .about-content p { text-align: center; }
+            .service-card p { text-align: left; }
+            .diferencial-item p { text-align: left; }
         }
     </style>
 </head>
@@ -536,7 +534,7 @@
             <h2>Pronto para crescer?</h2>
             <p class="contact-text">Vamos conversar e encontrar a solução perfeita para o seu negócio.</p>
             <div class="contact-buttons">
-                <a href="https://wa.me/55xx9xxxxxxxx?text=Olá,%20Leisla!%20Gostaria%20de%20saber%20mais%20sobre%20seus%20serviços%20de%20contabilidade." target="_blank" class="whatsapp cta-button">
+                <a href="https://wa.me/553185332906?text=Olá,%20Leisla!%20Gostaria%20de%20saber%20mais%20sobre%20seus%20serviços%20de%20contabilidade." target="_blank" class="whatsapp cta-button">
                     <i class="fab fa-whatsapp"></i> Converse no WhatsApp
                 </a>
             </div>
@@ -561,7 +559,7 @@
                 <h3>Contato</h3>
                 <p><i class="fas fa-map-marker-alt"></i> Rua Exemplo, 123 - Cidade</p>
                 <p><i class="fas fa-envelope"></i> contato@leislabeatriz.com.br</p>
-                <p><i class="fas fa-phone-alt"></i> (XX) XXXX-XXXX</p>
+                <p><i class="fas fa-phone-alt"></i> (31) 98533-2906</p>
             </div>
         </div>
         <div class="footer-bottom">
