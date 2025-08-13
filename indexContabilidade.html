@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leisla Beatriz | Contabilidade Estratégica e Consultoria</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Estilos Base */
+        :root {
+            --primary-color: #2c0a0a;
+            --secondary-color: #6b6b6b;
+            --accent-color: #d1b8a5;
+            --text-color: #4a4a4a;
+            --light-bg: #f9f7f4;
+            --white: #fff;
+            --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.05);
+            --shadow-dark: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: var(--accent-color);
+        }
+        h1, h2, h3 {
+            color: var(--primary-color);
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+        h2 {
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+        }
+
+        /* Header & Navigation */
+        .header {
+            background-color: var(--white);
+            box-shadow: var(--shadow-light);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            height: 50px;
+        }
+        .logo img {
+            height: 100%;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links a {
+            margin-left: 25px;
+            font-weight: 600;
+            position: relative;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-color);
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease-in-out;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(194, 139, 139, 0.6), rgba(74, 74, 74, 0.6)), url('https://images.unsplash.com/photo-1579621970795-87facc2f976d?q=80&w=2940&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            padding: 150px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle, rgba(236, 204, 204, 0.08) 2px, transparent 0);
+            background-size: 30px 30px;
+            animation: move-pattern 20s linear infinite;
+        }
+        @keyframes move-pattern {
+            from { background-position: 0 0; }
+            to { background-position: 30px 30px; }
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-content h1 {
+            color: var(--white);
+            font-size: 4rem;
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-content p {
+            font-size: 1.5rem;
+            font-weight: 300;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .cta-button {
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Sections */
+        .section-padding {
+            padding: 100px 0;
+        }
+        .about-grid {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        .about-image {
+            flex-shrink: 0;
+            max-width: 300px;
+            width: 100%;
+        }
+        .about-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: var(--shadow-dark);
+            transform: rotate(-3deg);
+            transition: transform 0.5s;
+        }
+        .about-image img:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+        .about-content {
+            flex-grow: 1;
+        }
+        .about-content p {
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            color: var(--secondary-color);
+        }
+
+        .services-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 0;
+            margin: 0 auto;
+        }
+        .service-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 5px solid var(--accent-color);
+            width: 300px;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+        }
+        .service-card .icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin: 0 0 10px;
+            font-family: 'Playfair Display', serif;
+        }
+        .service-card p {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-weight: 300;
+        }
+
+        /* Diferenciais Section */
+        .diferenciais-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        .diferencial-item {
+            text-align: center;
+            padding: 20px;
+        }
+        .diferencial-item .icon {
+            font-size: 3.5rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            animation: bounce-sync 2s ease-in-out infinite;
+        }
+        .diferencial-item:nth-child(2) .icon { animation-delay: 0.2s; }
+        .diferencial-item:nth-child(3) .icon { animation-delay: 0.4s; }
+        @keyframes bounce-sync {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        .diferencial-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+        .diferencial-item p {
+            font-weight: 300;
+            color: var(--secondary-color);
+        }
+
+        /* Testimonial Section */
+        .testimonial-section {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+        }
+        .testimonial-section h2 {
+            color: var(--white);
+        }
+        .testimonial-section blockquote {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.6rem;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            position: relative;
+        }
+        .testimonial-section blockquote::before {
+            content: "“";
+            font-size: 6rem;
+            color: rgba(255, 255, 255, 0.2);
+            position: absolute;
+            left: 50%;
+            top: -20px;
+            transform: translateX(-50%);
+        }
+        .testimonial-section cite {
+            display: block;
+            font-style: normal;
+            font-weight: 600;
+            color: #d1b8a5;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            text-align: center;
+            padding: 100px 0;
+        }
+        .contact-section h2 {
+            margin-bottom: 20px;
+        }
+        .contact-text {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            color: var(--secondary-color);
+            font-weight: 300;
+        }
+        .contact-buttons {
+            display: flex;
+            justify-content: center; /* ALINHA O BOTÃO AO CENTRO */
+            align-items: center;
+        }
+        .contact-buttons a {
+            display: inline-block;
+            background: linear-gradient(45deg, #d1b8a5, #b8a394);
+            color: var(--white);
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .contact-buttons a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        .whatsapp-button {
+            background-color: #25d366;
+            background: linear-gradient(45deg, #25d366, #128c7e);
+            color: var(--white);
+        }
+        .whatsapp-button:hover {
+            background-color: #128c7e;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 50px 0;
+            text-align: center;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            text-align: left;
+            margin-bottom: 40px;
+        }
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+        }
+        .footer-section h3 {
+            color: var(--white);
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 15px;
+        }
+        .footer-section ul {
+            list-style: none;
+        }
+        .footer-section a {
+            color: #d1b8a5;
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 300;
+        }
+        .footer-bottom {
+            border-top: 1px solid #6b6b6b;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Responsividade (Ajustes para telas menores) */
+        @media (max-width: 992px) {
+            .about-grid {
+                flex-direction: column;
+                text-align: center;
+            }
+            .about-image {
+                margin-bottom: 30px;
+            }
+            .about-image img {
+                transform: rotate(0deg);
+            }
+            .about-image img:hover {
+                transform: scale(1.05);
+            }
+        }
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+            }
+            .nav-links {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .nav-links a {
+                margin: 5px 10px;
+            }
+            .logo {
+                height: 40px;
+            }
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2.2rem; }
+            .hero-content p { font-size: 1.2rem; }
+            .about-image { max-width: 250px; }
+            .services-grid, .diferenciais-grid, .footer-content {
+                grid-template-columns: 1fr;
+            }
+            .about-content p, .service-card p, .diferencial-item p { text-align: left; }
+        }
+        @media (max-width: 576px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 2rem; }
+            .hero-content p { font-size: 1rem; }
+            .cta-button { padding: 12px 30px; font-size: 1rem; }
+            .footer-content { flex-direction: column; text-align: center; }
+            .footer-section { margin-bottom: 20px; }
+            .about-content p, .service-card p, .diferencial-item p { text-align: left; }
+            .services-grid { justify-content: center; }
+            .service-card { width: 100%; max-width: 300px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <nav class="navbar container">
+            <a href="#" class="logo">
+                <img src="l(1).png" alt="Leisla Beatriz - Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#sobre">Sobre Mim</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#diferenciais">Diferenciais</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Sua Parceria Estratégica em Contabilidade</h2>
+                <p>Soluções personalizadas para o sucesso financeiro e crescimento sustentável do seu negócio.</p>
+                <a href="#contato" class="cta-button">Fale Comigo Agora</a>
+            </div>
+        </section>
+
+        <section id="sobre" class="section-padding container">
+            <h2>Sobre Leisla Beatriz</h2>
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="mae.jpeg" alt="Leisla Beatriz - Contadora">
+                </div>
+                <div class="about-content">
+                    <p>Olá! Meu nome é Leisla Beatriz. Sou contadora, formada em Ciências Contábeis, com paixão por ajudar empreendedores a prosperarem. Após anos de experiência em grandes empresas, decidi focar em um atendimento mais próximo e humano, oferecendo serviços de contabilidade que vão além dos números.</p>
+                    <p>Minha missão é desmistificar a burocracia e transformar a contabilidade em uma ferramenta estratégica para o crescimento do seu negócio. Acredito que com planejamento e organização, é possível otimizar recursos e tomar decisões mais seguras.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicos" class="section-padding container" style="background-color: var(--white); border-radius: 12px; box-shadow: var(--shadow-light);">
+            <h2>Serviços de Contabilidade e Consultoria</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-handshake icon"></i>
+                    <h3>Abertura de Empresas</h3>
+                    <p>Te ajudo a dar o primeiro passo, desde a escolha do regime tributário até a obtenção do CNPJ.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-chart-pie icon"></i>
+                    <h3>Planejamento Tributário</h3>
+                    <p>Estratégias para reduzir legalmente a carga tributária da sua empresa e aumentar a rentabilidade.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-file-invoice icon"></i>
+                    <h3>Declaração de Imposto de Renda</h3>
+                    <p>Garantia de que sua declaração será feita corretamente, evitando multas e problemas com a Receita.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-wallet icon"></i>
+                    <h3>Consultoria Financeira</h3>
+                    <p>Análise completa e orientação para uma gestão financeira eficiente e sustentável.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-users-cog icon"></i>
+                    <h3>Departamento Pessoal</h3>
+                    <p>Gerenciamento de folha de pagamento, férias, e todas as obrigações trabalhistas.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-search-dollar icon"></i>
+                    <h3>Auditoria e Perícia</h3>
+                    <p>Análise detalhada de suas finanças para identificar inconsistências e oportunidades.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="diferenciais" class="section-padding container">
+            <h2>Por que Escolher Leisla Beatriz?</h2>
+            <div class="diferenciais-grid">
+                <div class="diferencial-item">
+                    <i class="fas fa-chart-line icon"></i>
+                    <h3>Foco em Estratégia</h3>
+                    <p>Não apenas processamos dados, mas usamos a contabilidade como uma ferramenta para o seu crescimento.</p>
+                </div>
+                <div class="diferencial-item">
+                    <i class="fas fa-headset icon"></i>
+                    <h3>Atendimento Humanizado</h3>
+                    <p>Você terá um contato direto e descomplicado, com suporte personalizado para suas necessidades.</p>
+                </div>
+                <div class="diferencial-item">
+                    <i class="fas fa-shield-alt icon"></i>
+                    <h3>Segurança e Transparência</h3>
+                    <p>Garantimos a conformidade com a legislação e a total transparência em todos os processos.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonial-section">
+            <div class="container">
+                <h2>O que dizem os clientes</h2>
+                <blockquote>"A Leisla Beatriz transformou a gestão financeira da minha empresa. O atendimento é claro, eficiente e totalmente focado nos meus objetivos."</blockquote>
+                <cite>— João da Silva, CEO da Startup ABC</cite>
+            </div>
+        </section>
+
+        <section id="contato" class="section-padding container">
+            <h2>Pronto para crescer?</h2>
+            <p class="contact-text">Vamos conversar e encontrar a solução perfeita para o seu negócio.</p>
+            <div class="contact-buttons">
+                <a href="https://wa.me/553185332906?text=Olá,%20Leisla!%20Gostaria%20de%20saber%20mais%20sobre%20seus%20serviços%20de%20contabilidade." target="_blank" class="whatsapp-button cta-button">
+                    <i class="fab fa-whatsapp"></i> Converse no WhatsApp
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3 class="footer-logo">Leisla Beatriz</h3>
+                <p>Contabilidade estratégica e consultoria financeira para o seu negócio.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links Úteis</h3>
+                <ul>
+                    <li><a href="#sobre">Sobre Mim</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#diferenciais">Diferenciais</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <p><i class="fas fa-envelope"></i> leisla2020@gmail.com</p>
+                <p><i class="fas fa-phone-alt"></i> (31) 98855  - 0841  (Somente para Ligações)</p>
+                <p><i class="fas fa-map-marker-alt"></i> Belo Horizonte, MG</p>
+                
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Leisla Beatriz. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
